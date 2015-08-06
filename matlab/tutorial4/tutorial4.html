@@ -1,0 +1,744 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <!--
+This HTML was auto-generated from MATLAB code.
+To make changes, update the MATLAB code and republish this document.
+      --><title>tutorial4</title><meta name="generator" content="MATLAB 7.14"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2013-03-01"><meta name="DC.source" content="tutorial4.m"><script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><style type="text/css">
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+
+html { min-height:100%; margin-bottom:1px; }
+html body { height:100%; margin:0px; font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#000; line-height:140%; background:#fff none; overflow-y:scroll; }
+html body td { vertical-align:top; text-align:left; }
+
+h1 { padding:0px; margin:0px 0px 25px; font-family:Arial, Helvetica, sans-serif; font-size:1.5em; color:#d55000; line-height:100%; font-weight:normal; }
+h2 { padding:0px; margin:0px 0px 8px; font-family:Arial, Helvetica, sans-serif; font-size:1.2em; color:#000; font-weight:bold; line-height:140%; border-bottom:1px solid #d6d4d4; display:block; }
+h3 { padding:0px; margin:0px 0px 5px; font-family:Arial, Helvetica, sans-serif; font-size:1.1em; color:#000; font-weight:bold; line-height:140%; }
+
+a { color:#005fce; text-decoration:none; }
+a:hover { color:#005fce; text-decoration:underline; }
+a:visited { color:#004aa0; text-decoration:none; }
+
+p { padding:0px; margin:0px 0px 20px; }
+img { padding:0px; margin:0px 0px 20px; border:none; }
+p img, pre img, tt img, li img { margin-bottom:0px; } 
+
+ul { padding:0px; margin:0px 0px 20px 23px; list-style:square; }
+ul li { padding:0px; margin:0px 0px 7px 0px; }
+ul li ul { padding:5px 0px 0px; margin:0px 0px 7px 23px; }
+ul li ol li { list-style:decimal; }
+ol { padding:0px; margin:0px 0px 20px 0px; list-style:decimal; }
+ol li { padding:0px; margin:0px 0px 7px 23px; list-style-type:decimal; }
+ol li ol { padding:5px 0px 0px; margin:0px 0px 7px 0px; }
+ol li ol li { list-style-type:lower-alpha; }
+ol li ul { padding-top:7px; }
+ol li ul li { list-style:square; }
+
+.content { font-size:1.2em; line-height:140%; padding: 20px; }
+
+pre, tt, code { font-size:12px; }
+pre { margin:0px 0px 20px; }
+pre.error { color:red; }
+pre.codeinput { padding:10px; border:1px solid #d3d3d3; background:#f7f7f7; }
+pre.codeoutput { padding:10px 11px; margin:0px 0px 20px; color:#4c4c4c; }
+
+@media print { pre.codeinput, pre.codeoutput { word-wrap:break-word; width:100%; } }
+
+span.keyword { color:#0000FF }
+span.comment { color:#228B22 }
+span.string { color:#A020F0 }
+span.untermstring { color:#B20000 }
+span.syscmd { color:#B28C00 }
+
+.footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
+.footer p { margin:0px; }
+
+  </style></head><body><div class="content"><h2>Contents</h2><div><ul><li><a href="#2">4. Classifying the P300</a></li></ul></div><pre class="codeinput"><span class="keyword">function</span> tutorial4()
+</pre><h2>4. Classifying the P300<a name="2"></a></h2><p>The first tutorial covered visualizing the P300 potential through an ERP plot. This tutorial covers the classification of the P300 potential. The EEG recording used here is made of a subject that is presented with a screen containing 6 icons. These icons were highlighted one by one. For each trial, each icon was highlighted a total of 10 times. The subject selected one of the icons and mentally counted the number of times the chosen icon was highlighted (which was ofcourse always 10), a task designed to keep him focussed on this icon. Every time the chosen icon, which I will refer to now as the target, was highlighted, a P300 potential occurs in the EEG signal. By determining which of the 6 icons corresponds to the largest P300, we can determine which of the icons was the target. This paradigm is a simple version of the famous P300 speller [1].</p><p>[1] Farwell, L. A., &amp; Donchin, E. (1988). Talking off the top of your head: toward a mental prosthesis utilizing event-related brain potentials. <i>Electroencephalography and clinical neurophysiology</i>, 70(6), 510&#8211;523, <a href="http://www.ncbi.nlm.nih.gov/pubmed/2461285">http://www.ncbi.nlm.nih.gov/pubmed/2461285</a></p><p>The data is stored in my public dropbox account and is 53 Mb in size. The following downloads it:</p><pre class="codeinput">urlwrite(<span class="string">'http://dl.dropbox.com/u/79303435/tutorial4-01.mat?dl=1'</span>, <span class="string">'tutorial4-01.mat'</span>);
+</pre><p>Loading the data should look very familiar by now:</p><pre class="codeinput">m = load(<span class="string">'tutorial4-01.mat'</span>);
+
+EEG = m.EEG;
+channel_names = m.channel_names;
+event_onsets = m.event_onsets;
+event_codes = m.event_codes;
+targets = m.targets;
+sample_rate = m.sample_rate;
+
+ntrials = length(targets);
+classes = unique(targets);
+nclasses = length(classes);
+nrepetitions = size(event_onsets,2) / nclasses;
+nchannels = length(channel_names);
+
+fprintf(<span class="string">'Duration of recording is %.2f seconds\n'</span>, size(EEG,2) / sample_rate);
+fprintf(<span class="string">'Number of EEG channels: %d\n'</span>, nchannels);
+fprintf(<span class="string">'Number of trials: %d\n'</span>, ntrials);
+disp(<span class="string">'Target icon for each trial:'</span>); disp(targets);
+fprintf(<span class="string">'Number of icons on the screen: %d\n'</span>, nclasses);
+fprintf(<span class="string">'Number of times each icon was highlighted: %d\n'</span>, nrepetitions);
+disp(<span class="string">'Shape of event matrix: (ntrials x (nclasses * nrepetitions)'</span>); disp(size(event_onsets));
+</pre><pre class="codeoutput">Duration of recording is 280.00 seconds
+Number of EEG channels: 32
+Number of trials: 12
+Target icon for each trial:
+     2     2     3     1     1     4     5     3     5     6     6     4
+
+Number of icons on the screen: 6
+Number of times each icon was highlighted: 10
+Shape of event matrix: (ntrials x (nclasses * nrepetitions)
+    12    60
+
+</pre><p>Cutting the data into trials. This time, it becomes a 5 dimensional array. Take a look at the resulting dimensions reading the following description:</p><p>There are 12 trials. During each of these trials, data was collected for each of the 6 icons on the screen. Each icon was highlighted 10 times. The time-onsets when an icon was highlighted is called an epoch. For each epoch, the time interval 0.1 s <i>before</i> the onset until 1 s <i>after</i> the onset is extracted (1126 samples). The recording contains 32 channels.</p><pre class="codeinput">window = [fix(-0.1*sample_rate), fix(1.0*sample_rate) - 1];
+nsamples = window(2) - window(1) + 1;
+
+trials = zeros(nchannels, nsamples, nrepetitions, nclasses, ntrials);
+
+<span class="keyword">for</span> trial = 1:ntrials
+    <span class="keyword">for</span> cl = classes
+        onsets = event_onsets(trial, event_codes(trial,:) == cl);
+        <span class="keyword">for</span> repetition = 1:length(onsets)
+            onset = onsets(repetition);
+            trials(:, :, repetition, cl, trial) = EEG(:, window(1)+onset:window(2)+onset);
+        <span class="keyword">end</span>
+    <span class="keyword">end</span>
+<span class="keyword">end</span>
+
+disp(<span class="string">'shape of trial matrix:'</span>); disp(size(trials));
+</pre><pre class="codeoutput">shape of trial matrix:
+          32        1126          10           6          12
+
+</pre><p>During the first tutorial, the EEG signal was already filtered in advance. This data is not, so we do it here. The function below applies a bandpass filter with a passband between 0.5 - 30 Hz. Also, each epoch is baselined. The baseline in this case is the mean EEG voltage starting from 0.1 s before the onset of the epoch until the onset, which we regard as 'resting EEG'. This baseline is substracted from the rest of the epoch, so the 'resing EEG' voltage is 0. Any changes to the resting EEG (such as the P300) as now relative to 0.</p><pre class="codeinput"><span class="comment">% Design the bandpass filter</span>
+[a, b] = butter(3, [0.5/(sample_rate/2), 30/(sample_rate/2)]);
+
+<span class="comment">% Apply the bandpass filter</span>
+<span class="comment">% filtfilt() operates across the first non-singleton dimension. First</span>
+<span class="comment">% permute the axis so that the samples are on the first dimension.</span>
+trials_filt = permute(trials, [2, 1, 3, 4, 5]);
+trials_filt = filtfilt(a, b, trials_filt);
+
+<span class="comment">% Permute the axes back in their original order</span>
+trials_filt = permute(trials_filt, [2, 1, 3, 4, 5]);
+
+<span class="comment">% Calculate the baseline amplitude on the first 0.1 seconds</span>
+<span class="comment">% (this corresponds to the time interval -0.1 - 0)</span>
+baseline = mean(trials_filt(:, 1:fix(0.1*sample_rate), :, :, :), 2);
+
+<span class="comment">% Remove the baseline</span>
+trials_filt = trials_filt - repmat(baseline, [1, nsamples, 1, 1, 1]);
+</pre><p>Since we'll be using machine learning, split the data into a train and a test set 50-50, like we did in the previous tutorial:</p><pre class="codeinput">train_split = 0.5;
+ntrain_trials = fix(train_split * ntrials);
+ntest_trials = ntrials - ntrain_trials;
+
+train = trials_filt(:,:,:,:, 1:ntrain_trials);
+train_targets = targets(1:ntrain_trials);
+
+test = trials_filt(:,:,:,:, ntrain_trials+1:end);
+test_targets = targets(ntrain_trials+1:end);
+
+disp(<span class="string">'channels x samples x repetitions x classes x trials'</span>);
+disp(<span class="string">'Training data:'</span>); disp(size(train));
+disp(<span class="string">'Test data:'</span>); disp(size(test));
+</pre><pre class="codeoutput">channels x samples x repetitions x classes x trials
+Training data:
+          32        1126          10           6           6
+
+Test data:
+          32        1126          10           6           6
+
+</pre><p>The training data can be simplified a little bit. We don't care any longer which epoch belongs to which icon on the screen. We only care about epochs where the target was highlighted versus epochs where a nontarget was highlighted.</p><pre class="codeinput">target_trials = [];
+nontarget_trials = [];
+<span class="keyword">for</span> trial = 1:ntrain_trials
+    <span class="keyword">for</span> cl = 1:nclasses
+        <span class="keyword">if</span> cl == train_targets(trial)
+            target_trials = cat(4, target_trials, squeeze(train(:,:,:,cl,trial)));
+        <span class="keyword">else</span>
+            nontarget_trials = cat(4, nontarget_trials, squeeze(train(:,:,:,cl,trial)));
+        <span class="keyword">end</span>
+    <span class="keyword">end</span>
+<span class="keyword">end</span>
+
+disp(<span class="string">'channels x samples x repetitions x trials'</span>);
+disp(<span class="string">'target_trials:'</span>); disp(size(target_trials));
+disp(<span class="string">'nontarget_trials:'</span>); disp(size(nontarget_trials));
+</pre><pre class="codeoutput">channels x samples x repetitions x trials
+target_trials:
+          32        1126          10           6
+
+nontarget_trials:
+          32        1126          10          30
+
+</pre><p>Before attempting classification, it is wise to first visualize the data. We do this in the same manner as during tutorial 1 with an ERP plot. So we bring back the `plot_eeg` function with some small improvements:</p><pre class="codeinput"><span class="keyword">function</span> h = plot_eeg(EEG, vspace, color)
+<span class="comment">%   plot_eeg(EEG, vspace, color)</span>
+<span class="comment">%</span>
+<span class="comment">%   Plot the EEG data, stacking the channels horizontally on top of each other.</span>
+<span class="comment">%</span>
+<span class="comment">%   Arguments:</span>
+<span class="comment">%   EEG    - Array (channels x samples) containing the EEG data</span>
+<span class="comment">%   vspace - Amount of vertical space to put between the channels</span>
+<span class="comment">%   color  - Color to draw the EEG in (for example 'k' for black)</span>
+
+    nchannels = size(EEG, 1);
+    nsamples = size(EEG, 2);
+    samplerate = 1024;
+
+    <span class="comment">% Calculate the bases for each channel</span>
+    bases = vspace * (1:nchannels); <span class="comment">% vspace * 0, vspace * 1, ..., vspace * 6</span>
+
+    <span class="comment">% Add the bases to the EEG channels. Note the usage of 'repmat' to</span>
+    <span class="comment">% clone the bases vector 'nsamples' times. This is necessary, as both</span>
+    <span class="comment">% sides of the + sign must be a matrix of the same dimensions.</span>
+    EEG = EEG + repmat(bases', 1, nsamples);
+
+    <span class="comment">% Calculate a timeline in seconds, knowing that the extracted time</span>
+    <span class="comment">% interval was -0.1 - 1.0 seconds</span>
+    time = (1:nsamples) / samplerate;
+    time = time - 0.1;
+
+    <span class="comment">% Plot EEG versus time.</span>
+    <span class="keyword">for</span> ch = 1:nchannels
+		h = plot(time, EEG(ch,:), <span class="string">'Color'</span>, color);
+    <span class="keyword">end</span>
+
+    <span class="comment">% Add gridlines to the plot</span>
+    grid <span class="string">on</span>;
+
+    <span class="comment">% Label the axes</span>
+    xlabel(<span class="string">'Time (s)'</span>);
+    ylabel(<span class="string">'Channels'</span>);
+
+    <span class="comment">% Set the y limits of the plot to leave some spacing at the top and</span>
+    <span class="comment">% bottom</span>
+    ylim([-vspace, (nchannels+1) * vspace]);
+
+    <span class="comment">% Set the x limits</span>
+    xlim([-0.1, 1.0]);
+
+    <span class="comment">% The y-ticks are set to the locations of the electrodes. The</span>
+    <span class="comment">% international 10-20 system defines default names for them.</span>
+    set(gca, <span class="string">'YTick'</span>, bases);
+    set(gca, <span class="string">'YTickLabel'</span>, {<span class="string">'Fz'</span>, <span class="string">'Cz'</span>, <span class="string">'Pz'</span>, <span class="string">'CP1'</span>, <span class="string">'CP3'</span>, <span class="string">'C3'</span>, <span class="string">'C4'</span>});
+
+    <span class="comment">% Add a vertical line at 0 s</span>
+    line([0, 0], [-vspace, (nchannels+1) * vspace], <span class="string">'Color'</span>, <span class="string">'k'</span>);
+
+    <span class="comment">% Put a nice title on top of the plot</span>
+    title(<span class="string">'EEG data'</span>);
+<span class="keyword">end</span>
+</pre><p>Using the <tt>plot_eeg</tt> function to plot the ERPs of both classes (targets versus nontargets):</p><pre class="codeinput"><span class="comment">% First average over trials, then over repetitions</span>
+target_erp = squeeze( mean(mean(target_trials, 4), 3) );
+nontarget_erp = squeeze( mean(mean(nontarget_trials, 4), 3) );
+
+figure(<span class="string">'Position'</span>, [100, 100, 400, 800]);
+hold <span class="string">on</span>;
+h1 = plot_eeg(target_erp, 5, <span class="string">'b'</span>);
+h2 = plot_eeg(nontarget_erp, 5, <span class="string">'r'</span>);
+legend([h1, h2], {<span class="string">'targets'</span>, <span class="string">'non-targets'</span>});
+</pre><img vspace="5" hspace="5" src="tutorial4_01.png" alt=""> <p>The familiar shape of the P300 is clearly visible on almost every channel.</p><p>Now for the classification. Classifying the P300 is relatively simple:</p><div><ol><li>For each trial, average across the repetitions, creating one ERP for each of the 6 classes.</li><li>Select channels which show a strong P300 in the training data (done manually here)</li><li>For each channel, extract the average voltage for 20 time windows.</li></ol></div><p>The procedure is implemented in the <tt>extract_features</tt> function below:</p><pre class="codeinput"><span class="keyword">function</span> features = extract_features(epoch)
+<span class="comment">%     function features = extract_features(epoch)</span>
+<span class="comment">%     Extract features form an epoch for classification.</span>
+<span class="comment">%</span>
+<span class="comment">%     arguments:</span>
+<span class="comment">%         epoch - An array (channels x samples x repetitions) containing</span>
+<span class="comment">%                 the epoch to extract features from.</span>
+<span class="comment">%     returns:</span>
+<span class="comment">%         A flat array containing the features.</span>
+    <span class="comment">% Collect the features into this list</span>
+    features = [];
+
+    <span class="comment">% First average over repetitions</span>
+    epoch = mean(epoch, 3);
+
+    <span class="comment">% Extract channels of interest</span>
+    channels_of_interest = [31, 8, 32, 23, 13, 12, 19];
+    nchannels = length(channels_of_interest);
+    epoch = epoch(channels_of_interest, :);
+
+    <span class="comment">% Finally, take the avarage value for 20 time windows</span>
+    nwindows = 20;
+    window_length = fix(size(epoch,2) / nwindows);
+    <span class="keyword">for</span> channel = 1:nchannels
+        <span class="keyword">for</span> window = 0:(nwindows-1)
+            feature = mean(epoch(channel, window*window_length+1:(window+1)*window_length));
+            features = [features feature];
+        <span class="keyword">end</span>
+    <span class="keyword">end</span>
+<span class="keyword">end</span>
+</pre><p>Applying the <tt>extract_features</tt> function to create the final training data:</p><pre class="codeinput">target_features = [];
+<span class="keyword">for</span> i = 1:size(target_trials, 4)
+    target_features = cat(1, target_features, extract_features(target_trials(:,:,:,i)));
+<span class="keyword">end</span>
+
+nontarget_features = [];
+<span class="keyword">for</span> i = 1:size(nontarget_trials, 4)
+    nontarget_features = cat(1, nontarget_features, extract_features(nontarget_trials(:,:,:,i)));
+<span class="keyword">end</span>
+
+disp(<span class="string">'observations x features'</span>);
+disp(<span class="string">'target_features:'</span>); disp(size(target_features));
+disp(<span class="string">'nontarget_features:'</span>); disp(size(nontarget_features));
+</pre><pre class="codeoutput">observations x features
+target_features:
+     6   140
+
+nontarget_features:
+    30   140
+
+</pre><p>As a classifier, we bring back the LDA used in the previous tutorial:</p><pre class="codeinput"><span class="keyword">function</span> [W, b] = train_lda(class1, class2)
+<span class="comment">%     Trains the LDA algorithm.</span>
+<span class="comment">%     arguments:</span>
+<span class="comment">%         class1 - An array (features x trials) for class 1</span>
+<span class="comment">%         class2 - An array (features x trails) for class 2)</span>
+<span class="comment">%     returns:</span>
+<span class="comment">%         The projection matrix W</span>
+<span class="comment">%         The offset b</span>
+    nclasses = 2;
+
+    nclass1 = size(class1, 1);
+    nclass2 = size(class2, 1);
+
+    <span class="comment">% Class priors: in this case, there are an unequal number of training</span>
+    <span class="comment">% examples for each class. There are 5 times as many nontarget trials</span>
+    <span class="comment">% as target trials.</span>
+    prior1 = nclass1 / (nclass1 + nclass2);
+    prior2 = nclass2 / (nclass1 + nclass2);
+
+    mean1 = mean(class1, 1);
+    mean2 = mean(class2, 1);
+
+    class1_centered = class1 - repmat(mean1, size(class1, 1), 1);
+    class2_centered = class2 - repmat(mean2, size(class2, 1), 1);
+
+    <span class="comment">% Calculate the covariance between the features</span>
+    cov1 = class1_centered' * class1_centered / (nclass1 - nclasses);
+    cov2 = class2_centered' * class2_centered / (nclass2 - nclasses);
+
+    W = (mean2 - mean1) * pinv(prior1.*cov1 + prior2.*cov2);
+    b = (prior1.*mean1 + prior2.*mean2) * W';
+<span class="keyword">end</span>
+
+<span class="keyword">function</span> prediction = apply_lda(test, W, b)
+<span class="comment">%     Applies a previously trained LDA to new data.</span>
+<span class="comment">%     arguments:</span>
+<span class="comment">%         test - An array (observations x features) containing the data</span>
+<span class="comment">%         W    - The project matrix W as calculated by train_lda()</span>
+<span class="comment">%         b    - The offsets b as calculated by train_lda()</span>
+<span class="comment">%     returns:</span>
+<span class="comment">%         A list containing a classlabel for each trial</span>
+    prediction = test * W' - b;
+<span class="keyword">end</span>
+</pre><p>The code below applies the LDA classifier to determine for each trial, which of the 6 icons corresponds to the largest P300 potential:</p><pre class="codeinput"><span class="keyword">function</span> predicted_targets = classify(trials, W, b)
+<span class="comment">%     function predicted_targets = classify(trials, W, b)</span>
+<span class="comment">%     Apply the LDA classifier to the test trials.</span>
+<span class="comment">%</span>
+<span class="comment">%     arguments:</span>
+<span class="comment">%         trials - An array (channels x samples x repetitions x classes x trials)</span>
+<span class="comment">%                  containing the test trials.</span>
+<span class="comment">%         W      - The weights W as returned by train_lda()</span>
+<span class="comment">%         b      - The offsets b as returned by train_lda()</span>
+<span class="comment">%     returns:</span>
+<span class="comment">%         A list containing the predicted target icon for each trial.</span>
+    nclasses = size(trials, 4);
+    ntrials = size(trials, 5);
+
+    predicted_targets = zeros(1, ntrials);
+    <span class="keyword">for</span> trial = 1:ntrials
+        <span class="comment">% Feature extraction</span>
+        features = [];
+        <span class="keyword">for</span> cl = 1:nclasses
+            features = cat(1, features, extract_features(trials(:,:,:,cl,trial)));
+        <span class="keyword">end</span>
+
+        <span class="comment">% Classification</span>
+        p = apply_lda(features, W, b);
+
+        <span class="comment">% Determine icon with the highest P300</span>
+        [~, i] = min(p);
+        predicted_targets(trial) = i;
+    <span class="keyword">end</span>
+<span class="keyword">end</span>
+</pre><p>Training the classifier on the training data, applying it on the test data:</p><pre class="codeinput">[W, b] = train_lda(target_features, nontarget_features);
+predicted_targets = classify(test, W, b);
+
+disp(<span class="string">'Predicted targets:'</span>); disp(predicted_targets);
+disp(<span class="string">'Real targets:     '</span>); disp(test_targets);
+fprintf(<span class="string">'Accuracy: %.2f\n'</span>, length(find(predicted_targets == test_targets)) / ntest_trials);
+</pre><pre class="codeoutput">Predicted targets:
+     5     3     5     6     6     4
+
+Real targets:     
+     5     3     5     6     6     4
+
+Accuracy: 1.00
+</pre><p>You see that with the first 6 trials as training data, we were able to correctly determine the target icon in the 6 remaining trials, using relatively simple techniques.</p><pre class="codeinput"><span class="keyword">end</span>
+</pre><p class="footer"><br>
+      Published with MATLAB&reg; 7.14<br></p></div><!--
+##### SOURCE BEGIN #####
+function tutorial4()
+
+%% 4. Classifying the P300
+% The first tutorial covered visualizing the P300 potential through an ERP
+% plot. This tutorial covers the classification of the P300 potential. The
+% EEG recording used here is made of a subject that is presented with a
+% screen containing 6 icons. These icons were highlighted one by one. For
+% each trial, each icon was highlighted a total of 10 times. The subject
+% selected one of the icons and mentally counted the number of times the
+% chosen icon was highlighted (which was ofcourse always 10), a task
+% designed to keep him focussed on this icon. Every time the chosen icon,
+% which I will refer to now as the target, was highlighted, a P300
+% potential occurs in the EEG signal. By determining which of the 6 icons
+% corresponds to the largest P300, we can determine which of the icons was
+% the target. This paradigm is a simple version of the famous P300 speller
+% [1].
+% 
+% [1] Farwell, L. A., & Donchin, E. (1988). Talking off the top of your
+% head: toward a mental prosthesis utilizing event-related brain
+% potentials. _Electroencephalography and clinical neurophysiology_, 70(6),
+% 510–523, http://www.ncbi.nlm.nih.gov/pubmed/2461285
+% 
+% The data is stored in my public dropbox account and is 53 Mb in size. The
+% following downloads it:
+%%
+urlwrite('http://dl.dropbox.com/u/79303435/tutorial4-01.mat?dl=1', 'tutorial4-01.mat');
+%%
+% Loading the data should look very familiar by now:
+m = load('tutorial4-01.mat');
+
+EEG = m.EEG;
+channel_names = m.channel_names;
+event_onsets = m.event_onsets;
+event_codes = m.event_codes;
+targets = m.targets;
+sample_rate = m.sample_rate;
+
+ntrials = length(targets);
+classes = unique(targets);
+nclasses = length(classes);
+nrepetitions = size(event_onsets,2) / nclasses;
+nchannels = length(channel_names);
+
+fprintf('Duration of recording is %.2f seconds\n', size(EEG,2) / sample_rate);
+fprintf('Number of EEG channels: %d\n', nchannels);
+fprintf('Number of trials: %d\n', ntrials);
+disp('Target icon for each trial:'); disp(targets);
+fprintf('Number of icons on the screen: %d\n', nclasses);
+fprintf('Number of times each icon was highlighted: %d\n', nrepetitions);
+disp('Shape of event matrix: (ntrials x (nclasses * nrepetitions)'); disp(size(event_onsets));
+%%
+% Cutting the data into trials. This time, it becomes a 5 dimensional
+% array. Take a look at the resulting dimensions reading the following
+% description:
+%
+% There are 12 trials. During each of these trials, data was collected for
+% each of the 6 icons on the screen. Each icon was highlighted 10 times.
+% The time-onsets when an icon was highlighted is called an epoch. For each
+% epoch, the time interval 0.1 s _before_ the onset until 1 s _after_ the
+% onset is extracted (1126 samples). The recording contains 32 channels.
+window = [fix(-0.1*sample_rate), fix(1.0*sample_rate) - 1];
+nsamples = window(2) - window(1) + 1;
+
+trials = zeros(nchannels, nsamples, nrepetitions, nclasses, ntrials);
+
+for trial = 1:ntrials
+    for cl = classes
+        onsets = event_onsets(trial, event_codes(trial,:) == cl);
+        for repetition = 1:length(onsets)
+            onset = onsets(repetition);
+            trials(:, :, repetition, cl, trial) = EEG(:, window(1)+onset:window(2)+onset);
+        end
+    end
+end
+
+disp('shape of trial matrix:'); disp(size(trials));
+%%
+% During the first tutorial, the EEG signal was already filtered in
+% advance. This data is not, so we do it here. The function below applies a
+% bandpass filter with a passband between 0.5 - 30 Hz. Also, each epoch is
+% baselined. The baseline in this case is the mean EEG voltage starting
+% from 0.1 s before the onset of the epoch until the onset, which we regard
+% as 'resting EEG'. This baseline is substracted from the rest of the
+% epoch, so the 'resing EEG' voltage is 0. Any changes to the resting EEG
+% (such as the P300) as now relative to 0.
+
+% Design the bandpass filter
+[a, b] = butter(3, [0.5/(sample_rate/2), 30/(sample_rate/2)]);
+
+% Apply the bandpass filter
+% filtfilt() operates across the first non-singleton dimension. First
+% permute the axis so that the samples are on the first dimension.
+trials_filt = permute(trials, [2, 1, 3, 4, 5]);
+trials_filt = filtfilt(a, b, trials_filt);
+
+% Permute the axes back in their original order
+trials_filt = permute(trials_filt, [2, 1, 3, 4, 5]);
+
+% Calculate the baseline amplitude on the first 0.1 seconds
+% (this corresponds to the time interval -0.1 - 0)
+baseline = mean(trials_filt(:, 1:fix(0.1*sample_rate), :, :, :), 2);
+
+% Remove the baseline
+trials_filt = trials_filt - repmat(baseline, [1, nsamples, 1, 1, 1]);
+        
+%%
+% Since we'll be using machine learning, split the data into a train and a
+% test set 50-50, like we did in the previous tutorial:
+train_split = 0.5;
+ntrain_trials = fix(train_split * ntrials);
+ntest_trials = ntrials - ntrain_trials;
+
+train = trials_filt(:,:,:,:, 1:ntrain_trials);
+train_targets = targets(1:ntrain_trials);
+
+test = trials_filt(:,:,:,:, ntrain_trials+1:end);
+test_targets = targets(ntrain_trials+1:end);
+
+disp('channels x samples x repetitions x classes x trials');
+disp('Training data:'); disp(size(train));
+disp('Test data:'); disp(size(test));
+%%
+% The training data can be simplified a little bit. We don't care any
+% longer which epoch belongs to which icon on the screen. We only care
+% about epochs where the target was highlighted versus epochs where a
+% nontarget was highlighted.
+target_trials = [];
+nontarget_trials = [];
+for trial = 1:ntrain_trials
+    for cl = 1:nclasses
+        if cl == train_targets(trial)
+            target_trials = cat(4, target_trials, squeeze(train(:,:,:,cl,trial)));
+        else
+            nontarget_trials = cat(4, nontarget_trials, squeeze(train(:,:,:,cl,trial)));
+        end
+    end
+end
+
+disp('channels x samples x repetitions x trials');
+disp('target_trials:'); disp(size(target_trials));
+disp('nontarget_trials:'); disp(size(nontarget_trials));
+%%
+% Before attempting classification, it is wise to first visualize the data.
+% We do this in the same manner as during tutorial 1 with an ERP plot. So
+% we bring back the `plot_eeg` function with some small improvements:
+function h = plot_eeg(EEG, vspace, color)
+%   plot_eeg(EEG, vspace, color)
+%
+%   Plot the EEG data, stacking the channels horizontally on top of each other.
+%
+%   Arguments:
+%   EEG    - Array (channels x samples) containing the EEG data
+%   vspace - Amount of vertical space to put between the channels
+%   color  - Color to draw the EEG in (for example 'k' for black)
+
+    nchannels = size(EEG, 1);
+    nsamples = size(EEG, 2);
+    samplerate = 1024;
+    
+    % Calculate the bases for each channel
+    bases = vspace * (1:nchannels); % vspace * 0, vspace * 1, ..., vspace * 6
+    
+    % Add the bases to the EEG channels. Note the usage of 'repmat' to
+    % clone the bases vector 'nsamples' times. This is necessary, as both
+    % sides of the + sign must be a matrix of the same dimensions.
+    EEG = EEG + repmat(bases', 1, nsamples);
+    
+    % Calculate a timeline in seconds, knowing that the extracted time
+    % interval was -0.1 - 1.0 seconds
+    time = (1:nsamples) / samplerate;
+    time = time - 0.1;
+    
+    % Plot EEG versus time.
+    for ch = 1:nchannels
+		h = plot(time, EEG(ch,:), 'Color', color);
+    end
+
+    % Add gridlines to the plot
+    grid on;
+    
+    % Label the axes
+    xlabel('Time (s)');
+    ylabel('Channels');
+    
+    % Set the y limits of the plot to leave some spacing at the top and
+    % bottom
+    ylim([-vspace, (nchannels+1) * vspace]);
+    
+    % Set the x limits
+    xlim([-0.1, 1.0]);
+    
+    % The y-ticks are set to the locations of the electrodes. The
+    % international 10-20 system defines default names for them.
+    set(gca, 'YTick', bases);
+    set(gca, 'YTickLabel', {'Fz', 'Cz', 'Pz', 'CP1', 'CP3', 'C3', 'C4'});
+    
+    % Add a vertical line at 0 s
+    line([0, 0], [-vspace, (nchannels+1) * vspace], 'Color', 'k');
+   
+    % Put a nice title on top of the plot
+    title('EEG data');
+end
+%%
+% Using the |plot_eeg| function to plot the ERPs of both classes (targets
+% versus nontargets):
+
+% First average over trials, then over repetitions
+target_erp = squeeze( mean(mean(target_trials, 4), 3) );
+nontarget_erp = squeeze( mean(mean(nontarget_trials, 4), 3) );
+
+figure('Position', [100, 100, 400, 800]);
+hold on;
+h1 = plot_eeg(target_erp, 5, 'b');
+h2 = plot_eeg(nontarget_erp, 5, 'r');
+legend([h1, h2], {'targets', 'non-targets'});
+%%
+% The familiar shape of the P300 is clearly visible on almost every
+% channel.
+% 
+% Now for the classification. Classifying the P300 is relatively simple:
+% 
+% # For each trial, average across the repetitions, creating one ERP for each of the 6 classes.
+% # Select channels which show a strong P300 in the training data (done manually here)
+% # For each channel, extract the average voltage for 20 time windows.
+% 
+% The procedure is implemented in the |extract_features| function below:
+function features = extract_features(epoch)
+%     function features = extract_features(epoch)
+%     Extract features form an epoch for classification.
+%     
+%     arguments:
+%         epoch - An array (channels x samples x repetitions) containing
+%                 the epoch to extract features from.
+%     returns:
+%         A flat array containing the features.
+    % Collect the features into this list
+    features = [];
+    
+    % First average over repetitions
+    epoch = mean(epoch, 3);
+
+    % Extract channels of interest
+    channels_of_interest = [31, 8, 32, 23, 13, 12, 19];
+    nchannels = length(channels_of_interest);
+    epoch = epoch(channels_of_interest, :);
+    
+    % Finally, take the avarage value for 20 time windows
+    nwindows = 20;
+    window_length = fix(size(epoch,2) / nwindows);
+    for channel = 1:nchannels
+        for window = 0:(nwindows-1)
+            feature = mean(epoch(channel, window*window_length+1:(window+1)*window_length));
+            features = [features feature];
+        end
+    end
+end
+%%
+% Applying the |extract_features| function to create the final training
+% data:
+target_features = [];
+for i = 1:size(target_trials, 4)
+    target_features = cat(1, target_features, extract_features(target_trials(:,:,:,i)));
+end
+
+nontarget_features = [];
+for i = 1:size(nontarget_trials, 4)
+    nontarget_features = cat(1, nontarget_features, extract_features(nontarget_trials(:,:,:,i)));
+end
+
+disp('observations x features');
+disp('target_features:'); disp(size(target_features));
+disp('nontarget_features:'); disp(size(nontarget_features));
+%%
+% As a classifier, we bring back the LDA used in the previous tutorial:
+function [W, b] = train_lda(class1, class2)
+%     Trains the LDA algorithm.
+%     arguments:
+%         class1 - An array (features x trials) for class 1
+%         class2 - An array (features x trails) for class 2)
+%     returns:
+%         The projection matrix W
+%         The offset b
+    nclasses = 2;
+    
+    nclass1 = size(class1, 1);
+    nclass2 = size(class2, 1);
+    
+    % Class priors: in this case, there are an unequal number of training
+    % examples for each class. There are 5 times as many nontarget trials
+    % as target trials.
+    prior1 = nclass1 / (nclass1 + nclass2);
+    prior2 = nclass2 / (nclass1 + nclass2);
+    
+    mean1 = mean(class1, 1);
+    mean2 = mean(class2, 1);
+    
+    class1_centered = class1 - repmat(mean1, size(class1, 1), 1);
+    class2_centered = class2 - repmat(mean2, size(class2, 1), 1);
+    
+    % Calculate the covariance between the features
+    cov1 = class1_centered' * class1_centered / (nclass1 - nclasses);
+    cov2 = class2_centered' * class2_centered / (nclass2 - nclasses);
+     
+    W = (mean2 - mean1) * pinv(prior1.*cov1 + prior2.*cov2);
+    b = (prior1.*mean1 + prior2.*mean2) * W';
+end
+
+function prediction = apply_lda(test, W, b)
+%     Applies a previously trained LDA to new data.
+%     arguments:
+%         test - An array (observations x features) containing the data
+%         W    - The project matrix W as calculated by train_lda()
+%         b    - The offsets b as calculated by train_lda()
+%     returns:
+%         A list containing a classlabel for each trial
+    prediction = test * W' - b;
+end
+%%
+% The code below applies the LDA classifier to determine for each trial,
+% which of the 6 icons corresponds to the largest P300 potential:
+function predicted_targets = classify(trials, W, b)
+%     function predicted_targets = classify(trials, W, b)
+%     Apply the LDA classifier to the test trials.
+% 
+%     arguments:
+%         trials - An array (channels x samples x repetitions x classes x trials)
+%                  containing the test trials.
+%         W      - The weights W as returned by train_lda()
+%         b      - The offsets b as returned by train_lda()
+%     returns:
+%         A list containing the predicted target icon for each trial.
+    nclasses = size(trials, 4);
+    ntrials = size(trials, 5);
+    
+    predicted_targets = zeros(1, ntrials);
+    for trial = 1:ntrials
+        % Feature extraction
+        features = [];
+        for cl = 1:nclasses
+            features = cat(1, features, extract_features(trials(:,:,:,cl,trial)));
+        end
+        
+        % Classification
+        p = apply_lda(features, W, b);
+        
+        % Determine icon with the highest P300
+        [~, i] = min(p);
+        predicted_targets(trial) = i;
+    end
+end
+%%
+% Training the classifier on the training data, applying it on the test
+% data:
+[W, b] = train_lda(target_features, nontarget_features);
+predicted_targets = classify(test, W, b);
+
+disp('Predicted targets:'); disp(predicted_targets);
+disp('Real targets:     '); disp(test_targets);
+fprintf('Accuracy: %.2f\n', length(find(predicted_targets == test_targets)) / ntest_trials);
+%%
+% You see that with the first 6 trials as training data, we were able to
+% correctly determine the target icon in the 6 remaining trials, using
+% relatively simple techniques.
+end
+
+##### SOURCE END #####
+--></body></html>

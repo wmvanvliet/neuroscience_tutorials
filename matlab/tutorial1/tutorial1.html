@@ -1,0 +1,382 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <!--
+This HTML was auto-generated from MATLAB code.
+To make changes, update the MATLAB code and republish this document.
+      --><title>tutorial1</title><meta name="generator" content="MATLAB 7.14"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2013-02-01"><meta name="DC.source" content="tutorial1.m"><script type="text/javascript" src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><style type="text/css">
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+
+html { min-height:100%; margin-bottom:1px; }
+html body { height:100%; margin:0px; font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#000; line-height:140%; background:#fff none; overflow-y:scroll; }
+html body td { vertical-align:top; text-align:left; }
+
+h1 { padding:0px; margin:0px 0px 25px; font-family:Arial, Helvetica, sans-serif; font-size:1.5em; color:#d55000; line-height:100%; font-weight:normal; }
+h2 { padding:0px; margin:0px 0px 8px; font-family:Arial, Helvetica, sans-serif; font-size:1.2em; color:#000; font-weight:bold; line-height:140%; border-bottom:1px solid #d6d4d4; display:block; }
+h3 { padding:0px; margin:0px 0px 5px; font-family:Arial, Helvetica, sans-serif; font-size:1.1em; color:#000; font-weight:bold; line-height:140%; }
+
+a { color:#005fce; text-decoration:none; }
+a:hover { color:#005fce; text-decoration:underline; }
+a:visited { color:#004aa0; text-decoration:none; }
+
+p { padding:0px; margin:0px 0px 20px; }
+img { padding:0px; margin:0px 0px 20px; border:none; }
+p img, pre img, tt img, li img { margin-bottom:0px; } 
+
+ul { padding:0px; margin:0px 0px 20px 23px; list-style:square; }
+ul li { padding:0px; margin:0px 0px 7px 0px; }
+ul li ul { padding:5px 0px 0px; margin:0px 0px 7px 23px; }
+ul li ol li { list-style:decimal; }
+ol { padding:0px; margin:0px 0px 20px 0px; list-style:decimal; }
+ol li { padding:0px; margin:0px 0px 7px 23px; list-style-type:decimal; }
+ol li ol { padding:5px 0px 0px; margin:0px 0px 7px 0px; }
+ol li ol li { list-style-type:lower-alpha; }
+ol li ul { padding-top:7px; }
+ol li ul li { list-style:square; }
+
+.content { font-size:1.2em; line-height:140%; padding: 20px; }
+
+pre, tt, code { font-size:12px; }
+pre { margin:0px 0px 20px; }
+pre.error { color:red; }
+pre.codeinput { padding:10px; border:1px solid #d3d3d3; background:#f7f7f7; }
+pre.codeoutput { padding:10px 11px; margin:0px 0px 20px; color:#4c4c4c; }
+
+@media print { pre.codeinput, pre.codeoutput { word-wrap:break-word; width:100%; } }
+
+span.keyword { color:#0000FF }
+span.comment { color:#228B22 }
+span.string { color:#A020F0 }
+span.untermstring { color:#B20000 }
+span.syscmd { color:#B28C00 }
+
+.footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
+.footer p { margin:0px; }
+
+  </style></head><body><div class="content"><h2>Contents</h2><div><ul><li><a href="#2">1. Load EEG data and plotting an ERP</a></li></ul></div><pre class="codeinput"><span class="keyword">function</span> tutorial1()
+</pre><h2>1. Load EEG data and plotting an ERP<a name="2"></a></h2><p>In this tutorial we will do some simple EEG data analysis in order to 'read' a subjects mind. This experiment is playfully called the "magic trick". The subject was sitting in front of a screen and was presented with 9 playing cards:</p><div><ol><li>Ace of spades</li><li>Jack of clubs</li><li>Queen of hearts</li><li>King of diamonds</li><li>10 of spaces</li><li>3 of clubs</li><li>10 of hearts</li><li>3 of diamonds</li><li>King of spades</li></ol></div><p>He picked one of these cards and kept it in his mind. Next, the 9 playing cards would flash one-by-one in a random order across the screen. Each card was presented a total of 30 times. The subject would mentally count the number of times his card would appear on the screen (which was 30 if he was paying attention, we are not interested in the answer he got, it just helps keep the subject focused on the cards). In this tutorial we will analyse the average response to each card. The card that the subject had in mind should produce a larger response than the others.</p><p>First off, let's download the data. I've created a public dropbox folder where I store it. Execute the code below. It will take some time to run, depending on the speed of your internet connection.</p><p><b>NOTE:</b> The data used in this tutorial is EEG data that has been bandpass filtered with a 3rd order Butterworth filter with a passband of 0.5-30 Hz. This results in relatively clean looking data. When doing ERP analysis on other data, you will probably have to filter it yourself. Don't do ERP analysis on non-filtered, non-baselined data! Bandpass filtering is covered in the 3rd tutorial.</p><pre class="codeinput">urlwrite(<span class="string">'http://dl.dropbox.com/u/79303435/tutorial1-01.mat?dl=1'</span>, <span class="string">'tutorial1-01.mat'</span>);
+</pre><p>After the above code has finished running, we have a file <tt>biosemi-03-filtered.mat</tt> in our current directory. It is stored in the default MATLAB format, which we can load:</p><pre class="codeinput">m = load(<span class="string">'tutorial1-01.mat'</span>);
+disp(<span class="string">'Fields of m:'</span>);
+disp(fields(m));
+</pre><pre class="codeoutput">Fields of m:
+    'EEG'
+    'labels'
+
+</pre><p>The load function returns a structure containing the variables stored in the matlab file. Two of them are of interest to us, the actual EEG and the labels which indicate at which point in time which card was presented to the subject.</p><pre class="codeinput">EEG = m.EEG;
+labels = m.labels;
+disp(<span class="string">'EEG dimensions:'</span>); disp(size(EEG));
+disp(<span class="string">'Label dimensions:'</span>); disp(size(labels));
+</pre><pre class="codeoutput">EEG dimensions:
+           7      288349
+
+Label dimensions:
+           1      288349
+
+</pre><p>The EEG variable is a matrix containing 7 rows that contain the signal collected from 7 electrodes. The label variable contains the output of our trigger cable, which was used to synchronize the EEG signal with what was happening on the screen. Every time we presented a card on the screen, we send a non-zero value through the trigger cable. The labels variable will therefore contain mostly zeros, but non-zero values at the moments in time we presented a card to the subject. Lets plot the raw EEG data:</p><pre class="codeinput">plot(EEG')
+</pre><img vspace="5" hspace="5" src="tutorial1_01.png" alt=""> <p>All channels are drawn on top of each other, which is not convenient. Usually, EEG data is plotted with the channels horizontally stacked, an artefact stemming from the days where EEG machines drew on large rolls of paper. Lets add a constant value to each EEG channel before plotting them and some decoration like a meaningful x and y axis. I'll write this as a function, since this will come in handy later on:</p><pre class="codeinput"><span class="keyword">function</span> plot_eeg(EEG, vspace, color)
+<span class="comment">%   plot_eeg(EEG, vspace, color)</span>
+<span class="comment">%</span>
+<span class="comment">%   Plot the EEG data, stacking the channels horizontally on top of each other.</span>
+<span class="comment">%</span>
+<span class="comment">%   Arguments:</span>
+<span class="comment">%   EEG    - Array (channels x samples) containing the EEG data</span>
+<span class="comment">%   vspace - Amount of vertical space to put between the channels</span>
+<span class="comment">%   color  - Color to draw the EEG in (for example 'k' for black)</span>
+
+    nchannels = size(EEG, 1);
+    nsamples = size(EEG, 2);
+
+    <span class="comment">% Calculate the bases for each channel</span>
+    bases = vspace * (1:nchannels); <span class="comment">% vspace * 0, vspace * 1, ..., vspace * 6</span>
+
+    <span class="comment">% Add the bases to the EEG channels. Note the usage of 'repmat' to</span>
+    <span class="comment">% clone the bases vector 'nsamples' times. This is necessary, as both</span>
+    <span class="comment">% sides of the + sign must be a matrix of the same dimensions.</span>
+    EEG = EEG + repmat(bases', 1, nsamples);
+
+    <span class="comment">% Calculate a timeline in seconds, knowing that the sample rate of the</span>
+    <span class="comment">% EEG recorder was 2048 Hz.</span>
+    samplerate = 2048;
+    time = (1:nsamples) / samplerate;
+
+    <span class="comment">% Plot EEG versus time</span>
+    plot(time, EEG', <span class="string">'Color'</span>, color);
+
+    <span class="comment">% Add gridlines to the plot</span>
+    grid();
+
+    <span class="comment">% Label the axes</span>
+    xlabel(<span class="string">'Time (s)'</span>);
+    ylabel(<span class="string">'Channels'</span>);
+
+    <span class="comment">% The y-ticks are set to the locations of the electrodes. The</span>
+    <span class="comment">% international 10-20 system defines default names for them.</span>
+    set(gca, <span class="string">'YTick'</span>, bases);
+    set(gca, <span class="string">'YTickLabel'</span>, {<span class="string">'Fz'</span>, <span class="string">'Cz'</span>, <span class="string">'Pz'</span>, <span class="string">'CP1'</span>, <span class="string">'CP3'</span>, <span class="string">'C3'</span>, <span class="string">'C4'</span>});
+
+    <span class="comment">% Put a nice title on top of the plot</span>
+    title(<span class="string">'EEG data'</span>);
+<span class="keyword">end</span>
+</pre><p>Testing our function:</p><pre class="codeinput">plot_eeg(EEG, 100, <span class="string">'k'</span>);
+</pre><img vspace="5" hspace="5" src="tutorial1_02.png" alt=""> <p>And to top it off, lets add vertical lines whenever a card was shown to the subject:</p><pre class="codeinput">hold <span class="string">on</span>; <span class="comment">% Draw in the previous plot</span>
+max_y = get(gca, <span class="string">'YLim'</span>);
+<span class="keyword">for</span> onset = find(labels)
+    line([onset onset] / 2048, max_y, <span class="string">'Color'</span>, <span class="string">'r'</span>);
+<span class="keyword">end</span>
+hold <span class="string">off</span>;
+<span class="comment">% As you can see, cards were shown at a rate of 2 per second.</span>
+</pre><img vspace="5" hspace="5" src="tutorial1_03.png" alt=""> <p>We are interested in the response generated whenever a card was shown, so we cut one-second-long pieces of EEG signal that start from the moment a card was shown. These pieces will be named 'trials'. A useful function here is <tt>find</tt> which returns all the indices of an array which contain to a non-zero value. It effectively gives us the time (as an index) when a card was shown, if we use it in a clever way:</p><pre class="codeinput">onsets = find(labels == 4);
+
+disp(<span class="string">'Onsets:'</span>);
+disp(onsets);
+disp(<span class="string">'Number of onsets:'</span>);
+disp(length(onsets));
+</pre><pre class="codeoutput">Onsets:
+  Columns 1 through 6
+
+       15959       24151       26199       39511       47703       54871
+
+  Columns 7 through 12
+
+       63063       80471       82519       97878       99926      110166
+
+  Columns 13 through 18
+
+      122454      128598      141910      147030      156280      169592
+
+  Columns 19 through 24
+
+      180856      191096      195192      207480      216695      221815
+
+  Columns 25 through 30
+
+      230007      243319      251511      264823      268919      281207
+
+Number of onsets:
+    30
+
+</pre><p>Each of the 9 cards was shown 30 times. Lets create a 4-dimensional array containing all the trials:</p><pre class="codeinput">nclasses = 9; <span class="comment">% 9 playing cards</span>
+ntrials = 30; <span class="comment">% each card was shown 30 times</span>
+nchannels = 7; <span class="comment">% 7 EEG channels</span>
+sample_rate = 2048; <span class="comment">% The sample rate of the EEG recording device was 2048Hz</span>
+nsamples = 1.0 * sample_rate; <span class="comment">% one second's worth of data samples</span>
+
+trials = zeros(nclasses, ntrials, nchannels, nsamples);
+<span class="keyword">for</span> card = 1:nclasses
+    onsets = find(labels == card);
+    <span class="keyword">for</span> trial = 1:length(onsets)
+        onset = onsets(trial);
+        trials(card, trial, :, :) = EEG(:, onset:onset+nsamples-1);
+    <span class="keyword">end</span>
+<span class="keyword">end</span>
+
+disp(<span class="string">'Size of trials array:'</span>); disp(size(trials));
+</pre><pre class="codeoutput">Size of trials array:
+           9          30           7        2048
+
+</pre><p>Lets plot one of the trials:</p><pre class="codeinput">trial = squeeze(trials(1,1,:,:)); <span class="comment">% squeeze drops all singleton dimensions</span>
+plot_eeg(trial, 30, <span class="string">'k'</span>);
+</pre><img vspace="5" hspace="5" src="tutorial1_04.png" alt=""> <p>Looking at the individual trials is not all that informative. Lets calculate the average response to each card and plot that:</p><pre class="codeinput">erp = squeeze(mean(trials, 2)); <span class="comment">% such an average is called an ERP in the</span>
+                                <span class="comment">% literature</span>
+
+<span class="comment">% Lets give each response a different color</span>
+colors = {<span class="string">'k'</span>, <span class="string">'b'</span>, <span class="string">'g'</span>, <span class="string">'y'</span>, <span class="string">'m'</span>, <span class="string">'r'</span>, <span class="string">'c'</span>, [1,1,0], [0.8,0.8,0.8]};
+
+figure(<span class="string">'Position'</span>, [100, 100, 400, 800]);
+hold <span class="string">on</span>; <span class="comment">% Draw each class on top of the others</span>
+<span class="keyword">for</span> i = 1:nclasses
+    plot_eeg(squeeze(erp(i,:,:)), 20, colors{i});
+<span class="keyword">end</span>
+hold <span class="string">off</span>;
+</pre><img vspace="5" hspace="5" src="tutorial1_05.png" alt=""> <p>One of the cards jumps out: the one corresponding to the green line. You can see it most clearly at channel Cz around 0.4 seconds. This line corresponds the the 3rd card which turns out to be the queen of hearts.</p><pre class="codeinput"><span class="keyword">end</span>
+</pre><p class="footer"><br>
+      Published with MATLAB&reg; 7.14<br></p></div><!--
+##### SOURCE BEGIN #####
+function tutorial1()
+%% 1. Load EEG data and plotting an ERP
+% In this tutorial we will do some simple EEG data analysis in order to
+% 'read' a subjects mind. This experiment is playfully called the "magic
+% trick". The subject was sitting in front of a screen and was presented
+% with 9 playing cards:
+%
+% # Ace of spades
+% # Jack of clubs
+% # Queen of hearts
+% # King of diamonds
+% # 10 of spaces
+% # 3 of clubs
+% # 10 of hearts
+% # 3 of diamonds
+% # King of spades
+%
+% He picked one of these cards and kept it in his mind. Next, the 9 playing
+% cards would flash one-by-one in a random order across the screen. Each
+% card was presented a total of 30 times. The subject would mentally count
+% the number of times his card would appear on the screen (which was 30 if
+% he was paying attention, we are not interested in the answer he got, it
+% just helps keep the subject focused on the cards). In this tutorial we
+% will analyse the average response to each card. The card that the subject
+% had in mind should produce a larger response than the others.
+%%
+% First off, let's download the data. I've created a public dropbox folder
+% where I store it. Execute the code below. It will take some time to run,
+% depending on the speed of your internet connection.
+%
+% *NOTE:* The data used in this tutorial is EEG data that has been bandpass
+% filtered with a 3rd order Butterworth filter with a passband of 0.5-30
+% Hz. This results in relatively clean looking data. When doing ERP
+% analysis on other data, you will probably have to filter it yourself.
+% Don't do ERP analysis on non-filtered, non-baselined data! Bandpass
+% filtering is covered in the 3rd tutorial.
+urlwrite('http://dl.dropbox.com/u/79303435/tutorial1-01.mat?dl=1', 'tutorial1-01.mat');
+
+%%
+% After the above code has finished running, we have a file
+% |biosemi-03-filtered.mat| in our current directory. It is stored in the
+% default MATLAB format, which we can load:
+m = load('tutorial1-01.mat');
+disp('Fields of m:');
+disp(fields(m));
+%%
+% The load function returns a structure containing the
+% variables stored in the matlab file. Two of them are of interest to us,
+% the actual EEG and the labels which indicate at which point in time which
+% card was presented to the subject.
+EEG = m.EEG;
+labels = m.labels;
+disp('EEG dimensions:'); disp(size(EEG));
+disp('Label dimensions:'); disp(size(labels));
+%%
+% The EEG variable is a matrix containing 7 rows that contain the signal
+% collected from 7 electrodes. The label variable contains the output of
+% our trigger cable, which was used to synchronize the EEG signal with what
+% was happening on the screen. Every time we presented a card on the
+% screen, we send a non-zero value through the trigger cable. The labels
+% variable will therefore contain mostly zeros, but non-zero values at the
+% moments in time we presented a card to the subject. Lets plot the raw EEG
+% data:
+plot(EEG')
+%%
+% All channels are drawn on top of each other, which is not convenient.
+% Usually, EEG data is plotted with the channels horizontally stacked, an
+% artefact stemming from the days where EEG machines drew on large rolls of
+% paper. Lets add a constant value to each EEG channel before plotting them
+% and some decoration like a meaningful x and y axis. I'll write this as a
+% function, since this will come in handy later on:
+function plot_eeg(EEG, vspace, color)
+%   plot_eeg(EEG, vspace, color)
+%
+%   Plot the EEG data, stacking the channels horizontally on top of each other.
+%
+%   Arguments:
+%   EEG    - Array (channels x samples) containing the EEG data
+%   vspace - Amount of vertical space to put between the channels
+%   color  - Color to draw the EEG in (for example 'k' for black)
+
+    nchannels = size(EEG, 1);
+    nsamples = size(EEG, 2);
+    
+    % Calculate the bases for each channel
+    bases = vspace * (1:nchannels); % vspace * 0, vspace * 1, ..., vspace * 6
+    
+    % Add the bases to the EEG channels. Note the usage of 'repmat' to
+    % clone the bases vector 'nsamples' times. This is necessary, as both
+    % sides of the + sign must be a matrix of the same dimensions.
+    EEG = EEG + repmat(bases', 1, nsamples);
+    
+    % Calculate a timeline in seconds, knowing that the sample rate of the
+    % EEG recorder was 2048 Hz.
+    samplerate = 2048;
+    time = (1:nsamples) / samplerate;
+    
+    % Plot EEG versus time
+    plot(time, EEG', 'Color', color);
+
+    % Add gridlines to the plot
+    grid();
+    
+    % Label the axes
+    xlabel('Time (s)');
+    ylabel('Channels');
+    
+    % The y-ticks are set to the locations of the electrodes. The
+    % international 10-20 system defines default names for them.
+    set(gca, 'YTick', bases);
+    set(gca, 'YTickLabel', {'Fz', 'Cz', 'Pz', 'CP1', 'CP3', 'C3', 'C4'});
+    
+    % Put a nice title on top of the plot
+    title('EEG data');
+end
+%%
+% Testing our function:
+plot_eeg(EEG, 100, 'k');
+%%
+% And to top it off, lets add vertical lines whenever a card was shown to
+% the subject:
+hold on; % Draw in the previous plot
+max_y = get(gca, 'YLim');
+for onset = find(labels)
+    line([onset onset] / 2048, max_y, 'Color', 'r');
+end
+hold off;
+% As you can see, cards were shown at a rate of 2 per second.
+%%
+% We are interested in the response generated whenever a card was shown, so
+% we cut one-second-long pieces of EEG signal that start from the moment a
+% card was shown. These pieces will be named 'trials'. A useful function
+% here is |find| which returns all the indices of an array which
+% contain to a non-zero value. It effectively gives us the time (as an
+% index) when a card was shown, if we use it in a clever way:
+onsets = find(labels == 4);
+
+disp('Onsets:');
+disp(onsets);
+disp('Number of onsets:');
+disp(length(onsets));
+%%
+% Each of the 9 cards was shown 30 times. Lets create a 4-dimensional array
+% containing all the trials:
+nclasses = 9; % 9 playing cards
+ntrials = 30; % each card was shown 30 times
+nchannels = 7; % 7 EEG channels
+sample_rate = 2048; % The sample rate of the EEG recording device was 2048Hz
+nsamples = 1.0 * sample_rate; % one second's worth of data samples
+
+trials = zeros(nclasses, ntrials, nchannels, nsamples);
+for card = 1:nclasses
+    onsets = find(labels == card);
+    for trial = 1:length(onsets)
+        onset = onsets(trial);
+        trials(card, trial, :, :) = EEG(:, onset:onset+nsamples-1);
+    end
+end
+        
+disp('Size of trials array:'); disp(size(trials));
+%%
+% Lets plot one of the trials:
+trial = squeeze(trials(1,1,:,:)); % squeeze drops all singleton dimensions
+plot_eeg(trial, 30, 'k');
+%%
+% Looking at the individual trials is not all that informative. Lets
+% calculate the average response to each card and plot that:
+erp = squeeze(mean(trials, 2)); % such an average is called an ERP in the
+                                % literature
+
+% Lets give each response a different color
+colors = {'k', 'b', 'g', 'y', 'm', 'r', 'c', [1,1,0], [0.8,0.8,0.8]};
+
+figure('Position', [100, 100, 400, 800]);
+hold on; % Draw each class on top of the others
+for i = 1:nclasses
+    plot_eeg(squeeze(erp(i,:,:)), 20, colors{i});
+end
+hold off;
+%%
+% One of the cards jumps out: the one corresponding to the green line. You
+% can see it most clearly at channel Cz around 0.4 seconds. This line
+% corresponds the the 3rd card which turns out to be the queen of hearts.
+end
+##### SOURCE END #####
+--></body></html>
