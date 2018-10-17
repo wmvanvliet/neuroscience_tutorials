@@ -4,9 +4,6 @@ Neuroscience using Python
 Some tutorials using Python for neuroscience. They use only NumPy, SciPy and matplotlib and show how to do everything from scratch.
 They are in the form of [Jupyter Notebooks](https://jupyter.org).
 
-
-Installing a scientific Python environment
-
 I have tried to provide clear installation instructions below. 
 
 ## 1. Install a python environment
