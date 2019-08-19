@@ -62,16 +62,16 @@ RUN git init . && \
     git pull origin master
 
 # Download the datasets
-RUN wget "https://github.com/wmvanvliet/neuroscience_tutorials/releases/download/0.1/sample-min.zip" -O sample-min.zip
-RUN unzip sample-min.zip -d mne-intro/data
-RUN rm sample-min.zip
+RUN wget "https://github.com/wmvanvliet/neuroscience_tutorials/releases/download/0.1/mne-intro-data.zip" -O mne-intro-data.zip
+RUN unzip mne-intro-data.zip -d mne-intro/
+RUN rm mne-intro-data.zip
 
 RUN wget "https://github.com/wmvanvliet/snl_workshop_2019/releases/download/0.1/eeg-bci-data.zip" -O eeg-bci-data.zip
-RUN unzip eeg-bci-data.zip -d eeg-bci/data
+RUN unzip eeg-bci-data.zip -d eeg-bci/
 RUN rm eeg-bci-data.zip
 
 RUN wget "https://github.com/wmvanvliet/snl_workshop_2019/releases/download/0.1/conpy-intro-data.zip" -O conpy-intro-data.zip
-RUN unzip conpy-intro-data.zip -d conpy-intro/data
+RUN unzip conpy-intro-data.zip -d conpy-intro/
 RUN rm conpy-intro-data.zip
 
 # Configure the MNE raw browser window to use the full width of the notebook
