@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="221.54445mm"
+   height="45.155556mm"
+   viewBox="0 0 785.00001 160"
+   id="svg2"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="function_call_with_explanation.svg">
+  <defs
+     id="defs4">
+    <clipPath
+       id="clipPath4154"
+       clipPathUnits="userSpaceOnUse">
+      <rect
+         y="0"
+         x="0"
+         height="2727.0828"
+         width="3993.9395"
+         id="rect4156"
+         style="fill:#6600cc;fill-opacity:1;stroke:#808080;stroke-width:20;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath4274">
+      <rect
+         style="fill:#515151;fill-opacity:0.44059406;stroke:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="rect4276"
+         width="620.3573"
+         height="21.785713"
+         x="66.071434"
+         y="60.933632" />
+    </clipPath>
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="1.4"
+     inkscape:cx="177.96298"
+     inkscape:cy="59.884551"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:snap-global="false"
+     inkscape:window-width="2556"
+     inkscape:window-height="1370"
+     inkscape:window-x="0"
+     inkscape:window-y="48"
+     inkscape:window-maximized="0"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0" />
+  <metadata
+     id="metadata7">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-1.509236,-55.774174)">
+    <rect
+       style="fill:#f7f7f7;fill-opacity:1;stroke:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect4387"
+       width="785"
+       height="160"
+       x="1.509236"
+       y="55.774174" />
+    <image
+       sodipodi:absref="/u/45/vanvlm1/unix/projects/snl_workshop_2019/notebooks/images/function_call.png"
+       xlink:href="function_call.png"
+       clip-path="url(#clipPath4274)"
+       width="621.19086"
+       height="24.6875"
+       preserveAspectRatio="none"
+       id="image4266"
+       x="65.022331"
+       y="59.304157" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#747474;stroke-width:3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 67.175144,87.141142 33.335036,0"
+       id="path4278"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path4280"
+       d="m 132.76944,87.141142 136.63975,0"
+       style="fill:none;fill-rule:evenodd;stroke:#747474;stroke-width:3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#747474;stroke-width:3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 283.74079,87.141142 232.23171,0"
+       id="path4282"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path4284"
+       d="m 541.35471,87.141142 138.22392,0"
+       style="fill:none;fill-rule:evenodd;stroke:#747474;stroke-width:3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       sodipodi:nodetypes="cc" />
+    <path
+       style="fill:#747474;fill-opacity:1;fill-rule:evenodd;stroke:#747474;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 83.842662,87.00506 0,35"
+       id="path4286"
+       inkscape:connector-curvature="0" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:12.5px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#434343;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="100.81535"
+       y="136.65892"
+       id="text4288"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan4290"
+         x="100.81535"
+         y="136.65892"
+         style="text-align:end;text-anchor:end;fill:#434343;fill-opacity:1">store result</tspan><tspan
+         sodipodi:role="line"
+         x="100.81535"
+         y="152.28392"
+         id="tspan4292"
+         style="text-align:end;text-anchor:end;fill:#434343;fill-opacity:1">in this variable</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:12.5px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#434343;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="201.52876"
+       y="136.65892"
+       id="text4294"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan4296"
+         x="201.52876"
+         y="136.65892"
+         style="text-align:center;text-anchor:middle;fill:#434343;fill-opacity:1">name of the</tspan><tspan
+         sodipodi:role="line"
+         x="201.52876"
+         y="152.28392"
+         id="tspan4298"
+         style="text-align:center;text-anchor:middle;fill:#434343;fill-opacity:1">function to call</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:12.5px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#434343;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="272.23495"
+       y="189.69194"
+       id="text4300"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         x="272.23495"
+         y="189.69194"
+         id="tspan4304"
+         style="text-align:center;text-anchor:middle;fill:#434343;fill-opacity:1">no space between the name</tspan><tspan
+         sodipodi:role="line"
+         x="272.23495"
+         y="205.31694"
+         id="tspan4308"
+         style="text-align:center;text-anchor:middle;fill:#434343;fill-opacity:1">and the parentheses!</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:12.5px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#434343;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="400.25644"
+       y="136.65892"
+       id="text4310"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan4312"
+         x="400.25644"
+         y="136.65892"
+         style="text-align:center;text-anchor:middle;fill:#434343;fill-opacity:1">the first parameter</tspan><tspan
+         sodipodi:role="line"
+         x="400.25644"
+         y="152.28392"
+         id="tspan4314"
+         style="text-align:center;text-anchor:middle;fill:#434343;fill-opacity:1">the name of the file to load</tspan><tspan
+         sodipodi:role="line"
+         x="400.25644"
+         y="167.90892"
+         id="tspan4316"
+         style="text-align:center;text-anchor:middle;fill:#434343;fill-opacity:1">treated as text</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:12.5px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#434343;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="523.23346"
+       y="188.97173"
+       id="text4318"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan4320"
+         x="523.23346"
+         y="188.97173"
+         style="text-align:center;text-anchor:middle;fill:#434343;fill-opacity:1">put a comma</tspan><tspan
+         sodipodi:role="line"
+         x="523.23346"
+         y="204.59673"
+         id="tspan4322"
+         style="text-align:center;text-anchor:middle;fill:#434343;fill-opacity:1">between parameters</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:12.5px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#434343;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="541.01904"
+       y="136.65892"
+       id="text4324"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan4326"
+         x="541.01904"
+         y="136.65892">the second parameter</tspan><tspan
+         sodipodi:role="line"
+         x="541.01904"
+         y="152.28392"
+         id="tspan4328">a &quot;named&quot; parameter called &quot;preload&quot;</tspan><tspan
+         sodipodi:role="line"
+         x="541.01904"
+         y="167.90892"
+         id="tspan4330">that we set to the special value &quot;True&quot;</tspan></text>
+    <path
+       inkscape:connector-curvature="0"
+       id="path4332"
+       d="m 201.08931,87.00506 0,35"
+       style="fill:#747474;fill-opacity:1;fill-rule:evenodd;stroke:#747474;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <path
+       style="fill:#747474;fill-opacity:1;fill-rule:evenodd;stroke:#747474;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 272.46995,87.005059 0,89.043161"
+       id="path4334"
+       inkscape:connector-curvature="0" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path4336"
+       d="m 523.49286,87.005059 0,89.043161"
+       style="fill:#747474;fill-opacity:1;fill-rule:evenodd;stroke:#747474;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <path
+       style="fill:#747474;fill-opacity:1;fill-rule:evenodd;stroke:#747474;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 610.46667,87.00506 0,35"
+       id="path4338"
+       inkscape:connector-curvature="0" />
+    <path
+       style="fill:#747474;fill-opacity:1;fill-rule:evenodd;stroke:#747474;stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 399.85664,87.00506 0,35"
+       id="path4340"
+       inkscape:connector-curvature="0" />
+  </g>
+</svg>

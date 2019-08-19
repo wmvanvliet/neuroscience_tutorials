@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   id="svg4136"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   width="7657.627"
+   height="2711.4407"
+   viewBox="0 0 7657.627 2711.4407"
+   sodipodi:docname="function_call.svg"
+   inkscape:export-filename="/u/45/vanvlm1/unix/projects/snl_workshop_2019/images/toolbox_single.png"
+   inkscape:export-xdpi="18.07"
+   inkscape:export-ydpi="18.07">
+  <metadata
+     id="metadata4142">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs4140">
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath4154">
+      <rect
+         style="fill:#6600cc;fill-opacity:1;stroke:#808080;stroke-width:20;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+         id="rect4156"
+         width="3993.9395"
+         height="2727.0828"
+         x="0"
+         y="0" />
+    </clipPath>
+  </defs>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="2556"
+     inkscape:window-height="1370"
+     id="namedview4138"
+     showgrid="false"
+     inkscape:zoom="0.76716236"
+     inkscape:cx="1533.0612"
+     inkscape:cy="2125.2593"
+     inkscape:window-x="0"
+     inkscape:window-y="48"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg4136" />
+  <image
+     sodipodi:absref="/u/45/vanvlm1/unix/projects/snl_workshop_2019/images/function_call.png"
+     xlink:href="function_call.png"
+     width="1483.125"
+     height="36.5625"
+     preserveAspectRatio="none"
+     id="image4236"
+     x="431.59229"
+     y="268.64005" />
+</svg>
