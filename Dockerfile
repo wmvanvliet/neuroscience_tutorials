@@ -34,6 +34,7 @@ RUN npm i npm@latest -g
 RUN pip install vtk && \
     pip install numpy && \
     pip install scipy && \
+    pip install pandas && \
     pip install pyqt5 && \
     pip install xvfbwrapper && \
     pip install mayavi && \
