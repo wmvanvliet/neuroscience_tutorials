@@ -44,7 +44,8 @@ RUN pip install vtk && \
     pip install nibabel && \
     pip install https://github.com/nipy/PySurfer/archive/master.zip && \
     pip install mne && \
-    pip install https://github.com/aaltoimaginglanguage/conpy/archive/master.zip
+    pip install https://github.com/aaltoimaginglanguage/conpy/archive/master.zip && \
+    pip install https://github.com/wmvanvliet/posthoc/archive/master.zip
 
 # Install Jupyter notebook extensions
 RUN pip install RISE && \
