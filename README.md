@@ -28,4 +28,4 @@ Analyze EEG data for BCI purposes, using no fancy toolboxes, just plain NumPy/Sc
 
 ## Post-Hoc
 
-[Post-hoc modification of a linear regression model](https://mybinder.org/v2/gh/wmvanvliet/neuroscience_tutorials/master?filepath=posthoc%2Flinear_regression.ipynb)
+[Using domain information in linear regression](https://mybinder.org/v2/gh/wmvanvliet/neuroscience_tutorials/master?filepath=posthoc%2Flinear_regression.ipynb)
