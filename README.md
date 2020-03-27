@@ -6,6 +6,8 @@ They are in the form of [Jupyter Notebooks](https://jupyter.org) and are designe
 Clicking on the links below will fire up a server for you and drop you into an interactive environment where you dive right in.
 Give it a try!
 
+Questions? Stuck in sien assignment? Open a issue on this repository and I shall try to answer. 
+
 
 ## EEG-BCI
 
