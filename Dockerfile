@@ -1,4 +1,4 @@
-FROM jupyter/minimal-notebook:9cea750e610c
+FROM jupyter/minimal-notebook:703d8b2dcb88
 
 MAINTAINER Marijn van Vliet <w.m.vanvliet@gmail.com>
 
