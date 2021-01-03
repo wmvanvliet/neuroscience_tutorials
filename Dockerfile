@@ -1,4 +1,4 @@
-FROM jupyter/minimal-notebook:65761486d5d3 
+FROM jupyter/minimal-notebook:9cea750e610c
 
 MAINTAINER Marijn van Vliet <w.m.vanvliet@gmail.com>
 
@@ -43,7 +43,7 @@ RUN pip install vtk && \
     pip install pillow && \
     pip install scikit-learn && \
     pip install nibabel && \
-    pip install --upgrade --ignore-installed https://github.com/nipy/PySurfer/archive/master.zip && \
+    pip install pysurfer && \
     pip install mne && \
     pip install https://github.com/aaltoimaginglanguage/conpy/archive/master.zip && \
     pip install https://github.com/wmvanvliet/posthoc/archive/master.zip
