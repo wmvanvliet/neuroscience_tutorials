@@ -27,8 +27,8 @@ ENV DISPLAY=:99
 USER $NB_UID
 
 # Upgrade the package managers
-RUN pip install --upgrade pip
-RUN npm i npm@latest -g
+# RUN pip install --upgrade pip
+# RUN npm i npm@latest -g
 
 # Install Python packages
 RUN pip install vtk && \
