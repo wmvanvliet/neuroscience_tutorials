@@ -9,6 +9,10 @@ Give it a try!
 Questions? Stuck in an assignment? Open a issue on this repository and I shall try to answer. 
 
 
+## EEG-ERP
+
+[Perform a magic trick through ERP analysis on EEG data](https://mybinder.org/v2/gh/wmvanvliet/neuroscience_tutorials/master?filepath=eeg-erp%2Findex.ipynb)
+
 ## EEG-BCI
 
 Analyze EEG data for BCI purposes, using no fancy toolboxes, just plain NumPy/SciPy:

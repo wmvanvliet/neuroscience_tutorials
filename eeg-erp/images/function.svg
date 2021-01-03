@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 744.09448819 1052.3622047"
+   id="svg4698"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="function.svg">
+  <defs
+     id="defs4700" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.7"
+     inkscape:cx="718.18518"
+     inkscape:cy="576.5269"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     showguides="true"
+     inkscape:guide-bbox="true"
+     inkscape:window-width="2556"
+     inkscape:window-height="1370"
+     inkscape:window-x="0"
+     inkscape:window-y="48"
+     inkscape:window-maximized="0">
+    <sodipodi:guide
+       position="138.89598,583.74192"
+       orientation="1,0"
+       id="guide5264" />
+    <sodipodi:guide
+       position="256.57875,587.27745"
+       orientation="1,0"
+       id="guide5266" />
+    <sodipodi:guide
+       position="312.58929,586.87501"
+       orientation="1,0"
+       id="guide5270" />
+    <sodipodi:guide
+       position="344.55358,593.39287"
+       orientation="1,0"
+       id="guide5272" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata4703">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:87.5px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="131.31982"
+       y="451.32144"
+       id="text5246"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan5248"
+         x="131.31982"
+         y="451.32144"
+         style="-inkscape-font-specification:'inconsolata Medium';font-family:inconsolata;font-weight:500;font-style:normal;font-stretch:normal;font-variant:normal">sin(2)</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:50px;line-height:125%;font-family:'ubunto sans';letter-spacing:0px;word-spacing:0px;fill:#808080;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;-inkscape-font-specification:'ubunto sans';font-stretch:normal;font-variant:normal;"
+       x="-317.95294"
+       y="585.9184"
+       id="text5250"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan5252"
+         x="-317.95294"
+         y="585.9184">name of the function</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:50px;line-height:125%;font-family:'ubunto sans';letter-spacing:0px;word-spacing:0px;fill:#808080;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;-inkscape-font-specification:'ubunto sans';font-stretch:normal;font-variant:normal;"
+       x="363.22989"
+       y="585.9184"
+       id="text5254"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan5256"
+         x="363.22989"
+         y="585.9184">function argument</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:50px;line-height:125%;font-family:'ubunto sans';letter-spacing:0px;word-spacing:0px;fill:#808080;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;-inkscape-font-specification:'ubunto sans';font-stretch:normal;font-variant:normal;"
+       x="272.47766"
+       y="712.36945"
+       id="text5258"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan5260"
+         x="272.47766"
+         y="712.36945"
+         style="text-align:center;text-anchor:middle;fill:#808080;-inkscape-font-specification:'ubunto sans';font-family:'ubunto sans';font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;">no space between the name</tspan><tspan
+         sodipodi:role="line"
+         x="272.47766"
+         y="774.86945"
+         id="tspan5278"
+         style="text-align:center;text-anchor:middle;fill:#808080;-inkscape-font-specification:'ubunto sans';font-family:'ubunto sans';font-weight:normal;font-style:normal;font-stretch:normal;font-variant:normal;">and the parentheses!</tspan></text>
+    <path
+       style="fill:#808080;fill-rule:evenodd;stroke:#808080;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m 256.6608,462.86728 -117.51794,0"
+       id="path5262"
+       inkscape:connector-curvature="0" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path5268"
+       d="m 344.67079,462.86728 -32.07152,0"
+       style="fill:#808080;fill-rule:evenodd;stroke:#808080;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <path
+       style="fill:#808080;fill-rule:evenodd;stroke:#808080;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;fill-opacity:1"
+       d="M 198.07919,462.8209 82.327432,531.12349"
+       id="path5274"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
+    <path
+       sodipodi:nodetypes="cc"
+       inkscape:connector-curvature="0"
+       id="path5276"
+       d="m 330.22205,462.8209 139.24824,68.30259"
+       style="fill:#808080;fill-rule:evenodd;stroke:#808080;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;fill-opacity:1" />
+    <path
+       sodipodi:nodetypes="cc"
+       inkscape:connector-curvature="0"
+       id="path5280"
+       d="M 273.07919,462.8209 273.756,659.69492"
+       style="fill:#808080;fill-rule:evenodd;stroke:#808080;stroke-width:5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1;fill-opacity:1" />
+  </g>
+</svg>

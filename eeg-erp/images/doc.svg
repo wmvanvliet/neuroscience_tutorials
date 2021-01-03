@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="210mm"
+   height="297mm"
+   viewBox="0 0 744.09448819 1052.3622047"
+   id="svg4389"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="doc.svg">
+  <defs
+     id="defs4391" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.7"
+     inkscape:cx="822.27725"
+     inkscape:cy="450.82403"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="2556"
+     inkscape:window-height="1370"
+     inkscape:window-x="0"
+     inkscape:window-y="48"
+     inkscape:window-maximized="0" />
+  <metadata
+     id="metadata4394">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1">
+    <image
+       sodipodi:absref="/u/45/vanvlm1/unix/projects/snl_workshop_2019/notebooks/images/doc.png"
+       xlink:href="doc.png"
+       width="1075.3125"
+       height="1079.0625"
+       preserveAspectRatio="none"
+       id="image4996"
+       x="-174.79912"
+       y="-1.4547685" />
+    <rect
+       style="fill:none;fill-opacity:1;stroke:#ff3f10;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect4999"
+       width="1078.843"
+       height="50.507633"
+       x="-174.75638"
+       y="44.229965" />
+    <rect
+       y="98.778206"
+       x="-174.75638"
+       height="50.507633"
+       width="1078.843"
+       id="rect5001"
+       style="fill:none;fill-opacity:1;stroke:#ff3f10;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:15px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ff3f10;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;"
+       x="-331.33002"
+       y="66.453316"
+       id="text5003"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan5005"
+         x="-331.33002"
+         y="66.453316">function &quot;signature&quot;</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:15px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ff3f10;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;"
+       x="-182.43597"
+       y="112.92034"
+       id="text5007"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan5009"
+         x="-182.43597"
+         y="112.92034"
+         style="text-align:end;text-anchor:end;fill:#ff3f10;fill-opacity:1;">short description of</tspan><tspan
+         sodipodi:role="line"
+         x="-182.43597"
+         y="131.67035"
+         id="tspan5011"
+         style="text-align:end;text-anchor:end;fill:#ff3f10;fill-opacity:1;">what the function does</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:15px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ff3f10;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;"
+       x="-268.70059"
+       y="203.83406"
+       id="text5013"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan5015"
+         x="-268.70059"
+         y="203.83406">All the parameters the function can take.</tspan><tspan
+         sodipodi:role="line"
+         x="-268.70059"
+         y="222.58406"
+         id="tspan5017">Don't dispair. Many of them are optional!</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:15px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ff3f10;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;"
+       x="-167.68533"
+       y="1035.1897"
+       id="text5019"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan5021"
+         x="-167.68533"
+         y="1035.1897">The result that is produced</tspan><tspan
+         sodipodi:role="line"
+         x="-167.68533"
+         y="1053.9397"
+         id="tspan5025">by the function</tspan><tspan
+         sodipodi:role="line"
+         x="-167.68533"
+         y="1072.6897"
+         id="tspan5023" /></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:15px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ff3f10;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;"
+       x="205.06097"
+       y="165.44827"
+       id="text5027"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan5029"
+         x="205.06097"
+         y="165.44827">The type of variables you are allowed to use for the parameter.</tspan><tspan
+         sodipodi:role="line"
+         x="205.06097"
+         y="184.19827"
+         id="tspan5031">Here, the &quot;raw&quot; parameter must be an object of type Raw.</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-weight:normal;font-size:15px;line-height:125%;font-family:sans-serif;letter-spacing:0px;word-spacing:0px;fill:#ff3f10;fill-opacity:1;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;"
+       x="369.75644"
+       y="212.15895"
+       id="text5033"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan5035"
+         x="369.75644"
+         y="212.15895">Here, you can use many things for the parameter.</tspan><tspan
+         sodipodi:role="line"
+         x="369.75644"
+         y="230.90895"
+         id="tspan5037">The special value None, a string, or a list of strings.</tspan></text>
+    <path
+       style="fill:#ff3f10;fill-rule:evenodd;stroke:#ff3f10;stroke-width:3;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;fill-opacity:1;stroke-miterlimit:4;stroke-dasharray:none"
+       d="m 102.14286,180.57649 c 101.07143,0 101.07143,0 101.07143,0"
+       id="path5039"
+       inkscape:connector-curvature="0" />
+    <path
+       inkscape:connector-curvature="0"
+       id="path5041"
+       d="m 158.57143,232.00505 c 210.71428,0 210.71428,0 210.71428,0"
+       style="fill:#ff3f10;fill-opacity:1;fill-rule:evenodd;stroke:#ff3f10;stroke-width:3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <rect
+       style="fill:none;fill-opacity:1;stroke:#ff3f10;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="rect5043"
+       width="978.83789"
+       height="103.03557"
+       x="-176.77669"
+       y="979.63123" />
+  </g>
+</svg>
