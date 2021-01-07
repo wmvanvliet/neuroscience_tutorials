@@ -2,6 +2,7 @@
 mne-intro/data
 conpy-intro/data
 eeg-bci/data
+eeg-erp/data
 *.zip
 
 # Byte-compiled / optimized / DLL files
