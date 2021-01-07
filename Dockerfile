@@ -77,6 +77,10 @@ RUN wget "https://github.com/wmvanvliet/neuroscience_tutorials/releases/download
 RUN unzip conpy-intro-data.zip -d conpy-intro/
 RUN rm conpy-intro-data.zip
 
+RUN wget "https://github.com/wmvanvliet/neuroscience_tutorials/releases/download/0.2/eeg-erp-data.zip" -O eeg-erp-data.zip
+RUN unzip eeg-erp-data.zip -d eeg-erp/
+RUN rm eeg-erp-data.zip
+
 # Configure the MNE raw browser window to use the full width of the notebook
 RUN ipython -c "import mne; mne.set_config('MNE_BROWSE_RAW_SIZE', '9.8, 7')"
 
