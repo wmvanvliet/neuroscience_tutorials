@@ -37,7 +37,8 @@ RUN pip install vtk && \
     pip install pandas && \
     pip install pyqt5 && \
     pip install xvfbwrapper && \
-    pip install mayavi && \
+    pip install pyvista && \
+    pip install pyvistaqt && \
     pip install ipywidgets && \
     pip install ipyevents && \
     pip install pillow && \
@@ -45,6 +46,7 @@ RUN pip install vtk && \
     pip install nibabel && \
     pip install pysurfer && \
     pip install mne && \
+    pip install mne-rsa && \
     pip install https://github.com/aaltoimaginglanguage/conpy/archive/master.zip && \
     pip install https://github.com/wmvanvliet/posthoc/archive/master.zip
 
@@ -52,8 +54,6 @@ RUN pip install vtk && \
 RUN pip install RISE && \
     jupyter nbextension install rise --py --sys-prefix && \
     jupyter nbextension enable rise --py --sys-prefix && \
-    jupyter nbextension install mayavi --py --sys-prefix && \
-    jupyter nbextension enable mayavi --py --sys-prefix && \
     npm cache clean --force
 
 # Clone the repository. First fetch the hash of the latest commit, which will
@@ -80,6 +80,10 @@ RUN rm conpy-intro-data.zip
 RUN wget "https://github.com/wmvanvliet/neuroscience_tutorials/releases/download/2/eeg-erp-data.zip" -O eeg-erp-data.zip
 RUN unzip eeg-erp-data.zip -d eeg-erp/
 RUN rm eeg-erp-data.zip
+
+RUN wget "https://github.com/wmvanvliet/neuroscience_tutorials/releases/download/2/rsa-data.zip" -O rsa-data.zip
+RUN unzip rsa-data.zip -d rsa/
+RUN rm rsa-data.zip
 
 # Configure the MNE raw browser window to use the full width of the notebook
 RUN ipython -c "import mne; mne.set_config('MNE_BROWSE_RAW_SIZE', '9.8, 7')"

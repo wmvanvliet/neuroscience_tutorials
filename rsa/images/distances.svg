@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="77.696007mm"
+   height="54.554642mm"
+   viewBox="0 0 77.696007 54.554642"
+   version="1.1"
+   id="svg8"
+   inkscape:version="0.92.5 (2060ec1f9f, 2020-04-08)"
+   sodipodi:docname="distances.svg">
+  <defs
+     id="defs2" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="2.8"
+     inkscape:cx="170.17372"
+     inkscape:cy="100.85525"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer2"
+     showgrid="false"
+     inkscape:snap-global="false"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0"
+     inkscape:window-width="2558"
+     inkscape:window-height="1372"
+     inkscape:window-x="0"
+     inkscape:window-y="47"
+     inkscape:window-maximized="0" />
+  <metadata
+     id="metadata5">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     sodipodi:insensitive="true"
+     style="display:none"
+     transform="translate(35.772567,-116.90917)">
+    <image
+       sodipodi:absref="/u/45/vanvlm1/unix/Downloads/brain.png"
+       xlink:href="/u/45/vanvlm1/unix/Downloads/brain.png"
+       width="1214.9667"
+       height="707.49585"
+       preserveAspectRatio="none"
+       id="image4809"
+       x="-465.36429"
+       y="-148.21817" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="Layer 2"
+     transform="translate(35.772567,-116.90917)">
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#acacac;stroke-width:3;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="m -10.394345,118.40625 c 3.0238093,0.18899 6.7430844,2.21145 9.82738073,4.34673 2.45684517,1.70089 5.52124087,3.68458 6.99255937,7.37053 1.5119047,3.78763 1.1339287,9.26042 -3.9687499,13.41815 -5.1026785,4.15774 -8.315476,9.82739 -14.3630952,11.1503 -6.047619,1.32292 -12.473214,0 -15.308035,1.32292 -2.834822,1.32292 -4.346725,2.64583 -4.157739,3.96875 0.188989,1.32292 3.96875,1.32292 7.748512,0.56696 3.779762,-0.75595 5.669643,-1.32291 7.370536,-0.56696 1.700893,0.75595 2.078869,3.96875 1.700893,4.7247 -0.377976,0.75595 -2.645833,2.26786 -2.267857,3.40179 0.377976,1.13392 2.267857,2.26785 3.96875,1.70089 1.700893,-0.56697 4.535714,-2.26786 4.3467259,-3.59077 -0.1889882,-1.32292 -0.7559525,-6.4256 -0.3779764,-7.55953 0.3779764,-1.13393 3.0206464,-2.92735 7.7485119,-5.85863 4.7278655,-2.93128 12.8868356,-6.42559 15.8749996,-6.42559 4.157739,0 6.99256,1.88988 8.882441,3.59077 1.889881,1.70089 2.078869,5.48065 2.267857,6.61458 0.188988,1.13393 -0.188988,1.7009 -0.188988,1.7009 v 0"
+       id="path4813"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ccsccsccssccsszssscc" />
+    <circle
+       style="opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:2.45670176;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       id="path4815"
+       r="1.1750362"
+       cy="130.8562"
+       cx="6.6466508" />
+    <circle
+       cx="15.06564"
+       cy="146.29102"
+       r="1.1750362"
+       id="circle4817"
+       style="opacity:1;fill:#000000;fill-opacity:1;stroke:none;stroke-width:2.45670176;stroke-linecap:round;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-dashoffset:0;stroke-opacity:1"
+       inkscape:transform-center-x="10.824416"
+       inkscape:transform-center-y="-20.112032" />
+    <path
+       sodipodi:nodetypes="cccsccssccsszc"
+       inkscape:connector-curvature="0"
+       id="path4819"
+       d="m 6.4255951,130.12351 c 1.5119047,3.78763 1.1339287,9.26042 -3.9687499,13.41815 -5.1026785,4.15774 -8.315476,9.82739 -14.3630952,11.1503 -6.047619,1.32292 -12.473214,0 -15.308035,1.32292 -2.834822,1.32292 -4.346725,2.64583 -4.157739,3.96875 0.188989,1.32292 3.96875,1.32292 7.748512,0.56696 3.779762,-0.75595 5.669643,-1.32291 7.370536,-0.56696 1.700893,0.75595 2.078869,3.96875 1.700893,4.7247 -0.377976,0.75595 -2.645833,2.26786 -2.267857,3.40179 0.377976,1.13392 2.267857,2.26785 3.96875,1.70089 1.700893,-0.56697 4.535714,-2.26786 4.3467259,-3.59077 -0.1889882,-1.32292 -0.7559525,-6.4256 -0.3779764,-7.55953 0.3779764,-1.13393 3.0206464,-2.92735 7.7485119,-5.85863 4.7278655,-2.93128 12.8868356,-6.42559 15.8749996,-6.42559"
+       style="fill:none;fill-rule:evenodd;stroke:#040404;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:1, 1;stroke-dashoffset:0;stroke-opacity:1" />
+    <path
+       style="fill:none;fill-rule:evenodd;stroke:#000000;stroke-width:0.5;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       d="M 6.6149209,130.95881 14.941523,146.0424"
+       id="path4821"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cc" />
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52777767px;line-height:125%;font-family:'DejaVu Sans';-inkscape-font-specification:'DejaVu Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       x="-35.94775"
+       y="149.93495"
+       id="text4825"><tspan
+         sodipodi:role="line"
+         id="tspan4823"
+         x="-35.94775"
+         y="149.93495"
+         style="font-size:3.17499995px;stroke-width:0.26458332px">geodesic distance</tspan></text>
+    <text
+       id="text4829"
+       y="138.64281"
+       x="12.227582"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:3.52777767px;line-height:125%;font-family:'DejaVu Sans';-inkscape-font-specification:'DejaVu Sans';letter-spacing:0px;word-spacing:0px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.26458332px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       xml:space="preserve"><tspan
+         style="font-size:3.17499995px;stroke-width:0.26458332px"
+         y="138.64281"
+         x="12.227582"
+         id="tspan4827"
+         sodipodi:role="line">euclidean distance</tspan></text>
+  </g>
+</svg>
