@@ -47,6 +47,7 @@ RUN pip install vtk && \
     pip install pysurfer && \
     pip install mne && \
     pip install mne-rsa && \
+    pip install trane && \
     pip install https://github.com/aaltoimaginglanguage/conpy/archive/master.zip && \
     pip install https://github.com/wmvanvliet/posthoc/archive/master.zip
 
