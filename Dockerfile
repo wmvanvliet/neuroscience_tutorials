@@ -51,6 +51,7 @@ RUN pip install \
     trame \
 	trame-vuetify \
 	trame-vtk \
+	trame_jupyter_extension \
     https://github.com/aaltoimaginglanguage/conpy/archive/master.zip \
     https://github.com/wmvanvliet/posthoc/archive/master.zip
 
