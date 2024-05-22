@@ -1,4 +1,4 @@
-FROM jupyter/minimal-notebook:703d8b2dcb88
+FROM jupyter/minimal-notebook:2087495e8211
 
 MAINTAINER Marijn van Vliet <w.m.vanvliet@gmail.com>
 
@@ -18,7 +18,7 @@ RUN apt-get install -yq --no-install-recommends \
     xvfb \
     x11-utils \
     libx11-dev \
-    qt5-default \
+    qt6-default \
     && apt-get clean
 
 ENV DISPLAY=:99
@@ -31,25 +31,27 @@ USER $NB_UID
 # RUN npm i npm@latest -g
 
 # Install Python packages
-RUN pip install vtk && \
-    pip install numpy && \
-    pip install scipy && \
-    pip install pandas && \
-    pip install pyqt5 && \
-    pip install xvfbwrapper && \
-    pip install pyvista && \
-    pip install pyvistaqt && \
-    pip install ipywidgets && \
-    pip install ipyevents && \
-    pip install pillow && \
-    pip install scikit-learn && \
-    pip install nibabel && \
-    pip install pysurfer && \
-    pip install mne && \
-    pip install mne-rsa && \
-    pip install trame && \
-    pip install https://github.com/aaltoimaginglanguage/conpy/archive/master.zip && \
-    pip install https://github.com/wmvanvliet/posthoc/archive/master.zip
+RUN pip install \
+	vtk \
+    numpy \
+    scipy \
+    pandas \
+    pyqt5 \
+    xvfbwrapper \
+    pyvista \
+    pyvistaqt \
+    ipywidgets \
+    ipyevents \
+    pillow \
+    scikit-learn \
+    nibabel \
+    mne \
+    mne-rsa \
+    trame \
+	trame-vuetify \
+	trame-vtk \
+    https://github.com/aaltoimaginglanguage/conpy/archive/master.zip \
+    https://github.com/wmvanvliet/posthoc/archive/master.zip
 
 # Install Jupyter notebook extensions
 RUN pip install RISE && \
@@ -89,5 +91,5 @@ RUN rm rsa-data.zip
 # Configure the MNE raw browser window to use the full width of the notebook
 RUN ipython -c "import mne; mne.set_config('MNE_BROWSE_RAW_SIZE', '9.8, 7')"
 
-# Add an x-server to the entrypoint. This is needed by Mayavi
+# Add an x-server to the entrypoint. This is needed by PyVista
 ENTRYPOINT ["tini", "-g", "--", "xvfb-run"] 
