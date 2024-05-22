@@ -40,6 +40,7 @@ RUN pip install \
     xvfbwrapper \
     pyvista \
     pyvistaqt \
+	ipympl \
     ipywidgets \
     ipyevents \
     pillow \
