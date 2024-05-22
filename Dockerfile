@@ -43,6 +43,7 @@ RUN pip install \
     ipywidgets \
     ipyevents \
     pillow \
+	RISE \
     scikit-learn \
     nibabel \
     mne \
@@ -52,12 +53,6 @@ RUN pip install \
 	trame-vtk \
     https://github.com/aaltoimaginglanguage/conpy/archive/master.zip \
     https://github.com/wmvanvliet/posthoc/archive/master.zip
-
-# Install Jupyter notebook extensions
-RUN pip install RISE && \
-    jupyter nbextension install rise --py --sys-prefix && \
-    jupyter nbextension enable rise --py --sys-prefix && \
-    npm cache clean --force
 
 # Clone the repository. First fetch the hash of the latest commit, which will
 # invalidate docker's cache when new things are pushed to the repository. See:
