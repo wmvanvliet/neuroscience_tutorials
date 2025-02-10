@@ -1,48 +1,31 @@
-FROM jupyter/minimal-notebook
+FROM jupyter/base-notebook:python-3.11
 
-MAINTAINER Marijn van Vliet <w.m.vanvliet@gmail.com>
+LABEL org.opencontainers.image.authors="Marijn van Vliet <w.m.vanvliet@gmail.com>"
 
-# Install core debian packages
+# Install git
 USER root
-ENV DEBIAN_FRONTEND noninteractive
+ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get update && apt-get -yq dist-upgrade \
     && apt-get install -yq --no-install-recommends \
-    openssh-client \
-    vim \ 
-    curl \
-    gcc \
+    git \
+	wget \
+	unzip \
     && apt-get clean
-
-# Xvfb
-RUN apt-get install -yq --no-install-recommends \
-    xvfb \
-    x11-utils \
-    libx11-dev \
-    qt6-base-dev \
-    && apt-get clean
-
-ENV DISPLAY=:99
 
 # Switch to notebook user
 USER $NB_UID
 
-# Upgrade the package managers
-# RUN pip install --upgrade pip
-# RUN npm i npm@latest -g
-
 # Install Python packages
 RUN pip install \
-	vtk \
-    numpy \
-    scipy \
-    pandas \
-    pyqt6 \
-    xvfbwrapper \
+	imageio \
+	imageio-ffmpeg \
     pyvista \
-    pyvistaqt \
 	ipympl \
     ipywidgets \
     ipyevents \
+	jupyter-server-proxy \
+	jupyterlab \
+	meshio \
     pillow \
 	RISE \
     scikit-learn \
@@ -52,9 +35,19 @@ RUN pip install \
     trame \
 	trame-vuetify \
 	trame-vtk \
-	trame_jupyter_extension \
+    pyside6 \
+    pyvistaqt \
+	trimesh \
     https://github.com/aaltoimaginglanguage/conpy/archive/master.zip \
     https://github.com/wmvanvliet/posthoc/archive/master.zip
+
+# Install vtk-osmesa wheel
+RUN pip uninstall vtk -y
+RUN pip install --no-cache-dir --extra-index-url https://wheels.vtk.org vtk-osmesa
+
+# allow jupyterlab for ipyvtk
+ENV JUPYTER_ENABLE_LAB=yes
+ENV PYVISTA_TRAME_SERVER_PROXY_PREFIX='/proxy/'
 
 # Clone the repository. First fetch the hash of the latest commit, which will
 # invalidate docker's cache when new things are pushed to the repository. See:
@@ -87,6 +80,3 @@ RUN rm rsa-data.zip
 
 # Configure the MNE raw browser window to use the full width of the notebook
 RUN ipython -c "import mne; mne.set_config('MNE_BROWSE_RAW_SIZE', '9.8, 7')"
-
-# Add an x-server to the entrypoint. This is needed by PyVista
-ENTRYPOINT ["tini", "-g", "--", "xvfb-run"] 
