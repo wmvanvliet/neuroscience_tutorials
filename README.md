@@ -26,7 +26,7 @@ Analyze EEG data for BCI purposes, using no fancy toolboxes, just plain NumPy/Sc
 ## MNE-Python
 
 [An introduction to basic MEG data analysis using MNE-Python](https://mybinder.org/v2/gh/wmvanvliet/neuroscience_tutorials/master?filepath=mne-intro%2Findex.ipynb)  
-[Representational Similarity Analysis using MNE-RSA](https://mybinder.org/v2/gh/wmvanvliet/neuroscience_tutorials/master?filepath=rsa%2Findex.ipynb)
+[Representational Similarity Analysis using MNE-RSA](https://mybinder.org/v2/gh/wmvanvliet/neuroscience_tutorials/master?filepath=rsa%2Findex.ipynb)  
 [Statistics using a cluster-based permutation test](https://mybinder.org/v2/gh/wmvanvliet/neuroscience_tutorials/master?filepath=rsa%2Fstatistics.ipynb)
 
 
