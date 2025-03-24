@@ -12,6 +12,10 @@ RUN apt-get update && apt-get -yq dist-upgrade \
 	unzip \
     && apt-get clean
 
+# Install startup script
+COPY 20configure_trame_proxy.sh /usr/local/bin/before-notebook.d/
+RUN chmod +x /usr/local/bin/before-notebook.d/20configure_trame_proxy.sh
+
 # Switch to notebook user
 USER $NB_UID
 
@@ -67,12 +71,11 @@ RUN pip install \
 RUN pip uninstall vtk -y
 RUN pip install --no-cache-dir --extra-index-url https://wheels.vtk.org vtk-osmesa
 
-# allow jupyterlab for ipyvtk
-ENV JUPYTER_ENABLE_LAB=yes
-ENV PYVISTA_TRAME_SERVER_PROXY_PREFIX='/proxy/'
-
 # Configure the MNE raw browser window to use the full width of the notebook
 RUN ipython -c "import mne; mne.set_config('MNE_BROWSE_RAW_SIZE', '9.8, 7')"
+
+# Disable announcement
+RUN jupyter labextension disable "@jupyterlab/apputils-extension:announcements"
 
 # Clone the repository. First fetch the hash of the latest commit, which will
 # invalidate docker's cache when new things are pushed to the repository. See:
