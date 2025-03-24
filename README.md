@@ -8,6 +8,10 @@ Give it a try!
 
 Questions? Stuck in an assignment? Open a issue on this repository and I shall try to answer. 
 
+## Visualization test
+
+[Test the 3D capabilities of the notebook server](https://mybinder.org/v2/gh/wmvanvliet/neuroscience_tutorials/master?filepath=test%2F3d_visualization.ipynb)
+
 
 ## EEG-ERP
 
